@@ -44,4 +44,28 @@ export const testimonials = [
       quote:
         "The customization options allow me to tailor lessons perfectly to my class needs.",
     },
-  ];
+];
+  
+export const tiers = [
+  {
+    name: "Free",
+    price: "€0",
+    features: [
+      "5 lesson plans per month",
+      "Pre-selected topics",
+      "Basic customization",
+      "Email support",
+    ],
+  },
+  {
+    name: "Pro",
+    price: "€5",
+    features: [
+      "30 lesson plans per month",
+      "Custom requirements",
+      "Advanced customization",
+      "Priority support",
+      "Exclusive templates",
+    ],
+  },
+];
