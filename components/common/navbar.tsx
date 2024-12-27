@@ -2,6 +2,7 @@ import React from "react";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
+import MobileMenuNav from "./MobileMenu";
 
 const Navbar = () => {
   const user = true; // Replace with actual user state or context
@@ -36,6 +37,7 @@ const Navbar = () => {
               Generate Lesson Plans
             </span>
           </Link>
+          <MobileMenuNav user={user} />
           <nav className="hidden md:flex items-center space-x-4">
             <Link
               className={buttonVariants({
@@ -65,6 +67,12 @@ const Navbar = () => {
                 <Link className={buttonVariants()} href="/create">
                   Create
                 </Link>
+                  <Link href="/signout"
+                    className={buttonVariants({
+                    variant: "ghost"
+                  })}
+                  >Sign out
+                  </Link>  
               </>
             )}
           </nav>
