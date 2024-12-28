@@ -3,6 +3,7 @@ import MaxWidthWrapper from "./MaxWidthWrapper";
 import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import MobileMenuNav from "./MobileMenu";
+import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 const Navbar = () => {
   const user = true; // Replace with actual user state or context
@@ -49,30 +50,32 @@ const Navbar = () => {
             </Link>
             {!user ? (
               <>
-                <Link href="/login">Login</Link>
-                <Link href="/register" className={buttonVariants()}>
+                <LoginLink className={buttonVariants({
+                  variant: "outline"
+                })}>Login</LoginLink>
+                <RegisterLink className={buttonVariants()}>
                   Sign up
-                </Link>
+                </RegisterLink>
               </>
             ) : (
               <>
                 <Link
                   href="/dashboard"
                   className={buttonVariants({
-                    variant: "secondary",
+                    variant: "outline",
                   })}
                 >
                   Dashboard
                 </Link>
-                <Link className={buttonVariants()} href="/create">
+                  <Link className={buttonVariants()} href="/create">
                   Create
                 </Link>
-                  <Link href="/signout"
+                  <LogoutLink
                     className={buttonVariants({
                     variant: "ghost"
                   })}
                   >Sign out
-                  </Link>  
+                  </LogoutLink>  
               </>
             )}
           </nav>
