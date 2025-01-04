@@ -4,9 +4,14 @@ import Link from "next/link";
 import { buttonVariants } from "../ui/button";
 import MobileMenuNav from "./MobileMenu";
 import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 
-const Navbar = () => {
-  const user = true; // Replace with actual user state or context
+const Navbar =async () => {
+  
+  const { getUser } = await getKindeServerSession();
+  const user = await getUser();
+
+
   return (
     <header>
       <MaxWidthWrapper>

@@ -6,8 +6,9 @@ import { buttonVariants } from "../ui/button";
 import { Menu } from "lucide-react";
 import Link from "next/link";
 import { LoginLink, LogoutLink, RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
+import { KindeUser } from "@kinde-oss/kinde-auth-nextjs/types";
 
-const MobileMenuNav = ({ user }: { user: boolean }) => {
+const MobileMenuNav = ({ user }: { user: KindeUser<object> }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
